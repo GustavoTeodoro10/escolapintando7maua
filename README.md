@@ -24,7 +24,9 @@ Site estático, sem build step (fácil de hospedar em qualquer lugar — GitHub 
 │   └── main.js         # menu mobile + scroll reveal
 ├── assets/
 │   ├── logo.svg         # emblema "PS" (versão ícone, para header/footer)
-│   └── favicon.svg       # ícone da aba
+│   ├── favicon.svg       # ícone da aba
+│   └── photos/
+│       └── foto-matriculas.jpg  # foto real dos alunos (hero), recortada do post de matrículas
 └── .claude/
     └── launch.json      # config para rodar um servidor local ao testar no Claude Code
 ```
@@ -53,7 +55,7 @@ Todo o conteúdo — textos, atividades, contatos e identidade visual — foi ex
 
 **Sobre a paleta e o logo**: as cores e o layout do emblema (respingo de tinta azul, círculo em 4 quadrantes coloridos, monograma "PS", texto em arco "RECREAÇÃO E PRÉ ESCOLA" e a assinatura em script "Pintando o Sete") foram recriados em SVG a partir do logo real do perfil. Não é o arquivo hospedado no Instagram/Facebook — que pode mudar ou não estar disponível em alta resolução — mas uma reconstrução fiel em vetor, o que garante nitidez em qualquer tamanho de tela. Se o cliente tiver o arquivo vetorial original (.ai/.svg/.eps), vale substituir `assets/logo.svg`, `assets/favicon.svg` e o emblema inline do hero (`index.html`, seção `#inicio`) por ele.
 
-**Sobre as fotos**: a página usa ilustrações originais (blobs, ícones) no lugar de fotos reais das crianças. Fotos de crianças tiradas de posts públicos não foram baixadas nem republicadas aqui por uma questão de privacidade/consentimento dos responsáveis — quem deve decidir usar essas imagens no site é a escola, que já tem a relação de confiança com as famílias. Basta a escola enviar fotos próprias (com autorização de uso de imagem já coletada dos responsáveis) para substituir as ilustrações nas seções "Sobre" e "Dia a dia".
+**Sobre as fotos**: o hero usa uma foto real dos alunos (`assets/photos/foto-matriculas.jpg`), recortada do post de divulgação ["Matrículas Abertas"](https://www.instagram.com/p/DA1pwvou3k9/) do Instagram oficial. Diferente de um clique de sala de aula, essa é uma foto posada que a própria escola já usa publicamente para vender matrícula — ou seja, o uso de imagem para fins de marketing já é o propósito original da foto. Ela está emoldurada em um recorte orgânico (SVG `clip-path`) com o selo "PS" sobreposto, no lugar do emblema gigante que ocupava o hero antes. As demais seções ("Sobre", "Dia a dia") continuam com ilustrações originais (blobs, ícones) em vez de fotos de sala de aula — para essas, vale a escola enviar fotos próprias com autorização de imagem já coletada dos responsáveis, se quiser substituir as ilustrações por fotos reais no futuro.
 
 **Avaliações**: a seção de prova social usa os depoimentos reais do Perfil da Empresa no Google (nota 4,6/5, 19 avaliações) — priorizando os mais recentes e com nota máxima (5 estrelas), como pedido pelo cliente. O Google também tem algumas avaliações antigas de 1 estrela (contestadas publicamente pela escola nas respostas); elas não foram usadas na vitrine por não serem as "mais recentes e com maiores notas", mas continuam visíveis para qualquer visitante que clique em "Ver todas as avaliações no Google" — a página não esconde o link, só não copia as negativas para o próprio site.
 
