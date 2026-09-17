@@ -23,8 +23,8 @@ Site estático, sem build step (fácil de hospedar em qualquer lugar — GitHub 
 ├── js/
 │   └── main.js         # menu mobile + scroll reveal
 ├── assets/
-│   ├── logo.svg         # emblema "PS" (versão ícone, para header/footer)
-│   ├── favicon.svg       # ícone da aba
+│   ├── logo-real.png    # logo real da escola (extraído do Facebook, fundo removido)
+│   ├── favicon.png       # ícone da aba (derivado do logo real)
 │   └── photos/
 │       └── foto-matriculas.jpg  # foto real dos alunos (hero), recortada do post de matrículas
 └── .claude/
@@ -50,10 +50,10 @@ E abrir `http://localhost:5500`.
 Todo o conteúdo — textos, atividades, contatos e identidade visual — foi extraído das redes oficiais do cliente. Nada foi inventado:
 
 - **Instagram**: [@escolapintando7maua](https://www.instagram.com/escolapintando7maua/) — bio, horário de funcionamento, legendas de posts reais (matrículas, oficina de artes, culinária pedagógica, campo de experiência corpo/gesto/movimento, Semana do Folclore, Redemoinho do Saci).
-- **Facebook**: [Escola e Berçário Pintando o Sete](https://www.facebook.com/escolapintando7maua/) — endereço completo, categoria (Pré-escola / Berçário e Educação Infantil), modalidades (Integral / Semi-integral / Meio período), telefone, e-mail.
+- **Facebook**: [Escola e Berçário Pintando o Sete](https://www.facebook.com/escolapintando7maua/) — endereço completo, categoria (Pré-escola / Berçário e Educação Infantil), modalidades (Integral / Semi-integral / Meio período), telefone, e-mail, e a [foto de perfil em maior resolução](https://www.facebook.com/photo/?fbid=386051023694589&set=a.386050980361260) usada como logo do site.
 - **Google** (Perfil da Empresa): nota agregada (4,6/5, 19 avaliações) e os depoimentos usados na seção "Depoimentos" — [ver no Google Maps](https://www.google.com/maps/place/Recrea%C3%A7%C3%A3o+e+Pre+Escola+Pintando+o+Sete/data=!4m2!3m1!1s0x94ce6958891565dd:0x8e041762671de335).
 
-**Sobre a paleta e o logo**: as cores e o layout do emblema (respingo de tinta azul, círculo em 4 quadrantes coloridos, monograma "PS", texto em arco "RECREAÇÃO E PRÉ ESCOLA" e a assinatura em script "Pintando o Sete") foram recriados em SVG a partir do logo real do perfil. Não é o arquivo hospedado no Instagram/Facebook — que pode mudar ou não estar disponível em alta resolução — mas uma reconstrução fiel em vetor, o que garante nitidez em qualquer tamanho de tela. Se o cliente tiver o arquivo vetorial original (.ai/.svg/.eps), vale substituir `assets/logo.svg`, `assets/favicon.svg` e o emblema inline do hero (`index.html`, seção `#inicio`) por ele.
+**Sobre o logo**: `assets/logo-real.png` é o arquivo de perfil real da escola (baixado na maior resolução disponível publicamente, 719×719, a partir da foto de perfil do Facebook) — não uma recriação. O arquivo original tinha fundo branco sólido (comum em fotos de perfil, que são sempre "achatadas"); o fundo foi removido por preenchimento de área a partir das bordas (flood fill), o que preserva os vãos brancos internos do próprio desenho (o texto "RECREAÇÃO E PRÉ ESCOLA", "PS" e "Pintando o Sete" continuam brancos e legíveis) e deixa só a arte com transparência, pronta para usar sobre qualquer cor do site. `assets/favicon.png` é esse mesmo arquivo, recortado em canvas quadrado. Se o cliente tiver o arquivo vetorial original (.ai/.svg/.eps) ou uma exportação em resolução ainda maior, vale substituir `assets/logo-real.png` por ele — o resultado só melhora.
 
 **Sobre as fotos**: o hero usa uma foto real dos alunos (`assets/photos/foto-matriculas.jpg`), recortada do post de divulgação ["Matrículas Abertas"](https://www.instagram.com/p/DA1pwvou3k9/) do Instagram oficial. Diferente de um clique de sala de aula, essa é uma foto posada que a própria escola já usa publicamente para vender matrícula — ou seja, o uso de imagem para fins de marketing já é o propósito original da foto. Ela está emoldurada em um recorte orgânico (SVG `clip-path`) com o selo "PS" sobreposto, no lugar do emblema gigante que ocupava o hero antes. As demais seções ("Sobre", "Dia a dia") continuam com ilustrações originais (blobs, ícones) em vez de fotos de sala de aula — para essas, vale a escola enviar fotos próprias com autorização de imagem já coletada dos responsáveis, se quiser substituir as ilustrações por fotos reais no futuro.
 
