@@ -1,0 +1,9 @@
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+node_modules/
+
+# Local Claude Code tooling (installed skills, dev-server launch config) —
+# not part of the site's source, kept out of the client's repo
+.claude/

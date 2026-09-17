@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,700&display=swap');
+
+:root {
+  --brand-cream: #FFF8EC;
+  --brand-cream-2: #FFEFD6;
+  --brand-ink: #1C2340;
+  --brand-ink-soft: #4A4F6B;
+  --brand-blue: #3454D1;
+  --brand-blue-dark: #23348C;
+  --brand-yellow: #FFC53D;
+  --brand-coral: #FF6B57;
+  --brand-green: #2FB380;
+  --brand-whatsapp: #0F7A3A;
+  --brand-whatsapp-dark: #0C6530;
+  --shadow-ink: 4px 4px 0 var(--brand-ink);
+  --shadow-ink-sm: 3px 3px 0 var(--brand-ink);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--brand-cream);
+  color: var(--brand-ink);
+  font-family: 'Nunito', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: 'Fredoka', system-ui, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* Visible, on-brand focus ring instead of the browser default outline */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--brand-blue);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+::selection {
+  background: var(--brand-yellow);
+  color: var(--brand-ink);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'Fredoka', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  border: 3px solid var(--brand-ink);
+  box-shadow: var(--shadow-ink);
+  cursor: pointer;
+  transition: transform 150ms ease-out, box-shadow 150ms ease-out;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--brand-ink);
+}
+
+.btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 var(--brand-ink);
+}
+
+.btn-whatsapp {
+  background: var(--brand-whatsapp);
+  color: #fff;
+}
+
+.btn-whatsapp:hover {
+  background: var(--brand-whatsapp-dark);
+}
+
+.btn-outline {
+  background: var(--brand-cream);
+  color: var(--brand-ink);
+}
+
+.btn-outline:hover {
+  background: #fff;
+}
+
+.btn-yellow {
+  background: var(--brand-yellow);
+  color: var(--brand-ink);
+}
+
+/* ---------- Cards & chips ---------- */
+.card-clay {
+  background: #fff;
+  border: 3px solid var(--brand-ink);
+  border-radius: 28px;
+  box-shadow: var(--shadow-ink);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fff;
+  border: 2.5px solid var(--brand-ink);
+  border-radius: 999px;
+  padding: 0.55rem 1.1rem;
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+/* ---------- Decorative blobs ---------- */
+.blob {
+  position: absolute;
+  z-index: 0;
+  filter: blur(0px);
+}
+
+.float-slow {
+  animation: floaty 7s ease-in-out infinite;
+}
+
+.float-slow.delay-1 { animation-delay: 1.2s; }
+.float-slow.delay-2 { animation-delay: 2.4s; }
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(4deg); }
+}
+
+/* Hero brush-stroke draw-on, played once on load */
+.brush-draw {
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+  animation: draw 1.4s 0.3s cubic-bezier(.65,0,.35,1) forwards;
+}
+
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}
+
+.hero-pop {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: pop-in 0.7s 0.15s ease-out forwards;
+}
+
+.hero-pop.d1 { animation-delay: 0.35s; }
+.hero-pop.d2 { animation-delay: 0.55s; }
+.hero-pop.d3 { animation-delay: 0.75s; }
+
+@keyframes pop-in {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brush-draw { animation: none; stroke-dashoffset: 0; }
+  .hero-pop { animation: none; opacity: 1; transform: none; }
+  .float-slow { animation: none; }
+}
+
+/* Grouped scroll-reveal (single staggered moment per section, not per-element chatter) */
+.reveal-group [data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal-group.is-visible [data-reveal] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-group[data-reveal-stagger] [data-reveal]:nth-child(1) { transition-delay: 0ms; }
+.reveal-group[data-reveal-stagger] [data-reveal]:nth-child(2) { transition-delay: 90ms; }
+.reveal-group[data-reveal-stagger] [data-reveal]:nth-child(3) { transition-delay: 180ms; }
+.reveal-group[data-reveal-stagger] [data-reveal]:nth-child(4) { transition-delay: 270ms; }
+.reveal-group[data-reveal-stagger] [data-reveal]:nth-child(5) { transition-delay: 360ms; }
+.reveal-group[data-reveal-stagger] [data-reveal]:nth-child(6) { transition-delay: 450ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-group [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ---------- Wave divider ---------- */
+.wave-divider {
+  display: block;
+  width: 100%;
+  height: auto;
+  line-height: 0;
+}
+
+/* ---------- Mobile nav ---------- */
+#mobile-menu {
+  transform: translateY(-12px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease-out, transform 200ms ease-out;
+}
+
+#mobile-menu.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Underline that grows from the left on hover, tied to real nav affordance rather than decoration */
+.nav-link {
+  position: relative;
+  font-weight: 700;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 3px;
+  width: 0;
+  background: var(--brand-coral);
+  border-radius: 2px;
+  transition: width 200ms ease-out;
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  width: 100%;
+}
