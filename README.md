@@ -23,8 +23,8 @@ Site estático, sem build step (fácil de hospedar em qualquer lugar — GitHub 
 ├── js/
 │   └── main.js         # menu mobile + scroll reveal
 ├── assets/
-│   ├── logo.svg         # marca (usa as CSS vars de cor do tema)
-│   └── favicon.svg       # ícone da aba (cores fixas)
+│   ├── logo.svg         # emblema "PS" (versão ícone, para header/footer)
+│   └── favicon.svg       # ícone da aba
 └── .claude/
     └── launch.json      # config para rodar um servidor local ao testar no Claude Code
 ```
@@ -47,14 +47,15 @@ E abrir `http://localhost:5500`.
 
 Todo o conteúdo — textos, atividades, contatos e identidade visual — foi extraído das redes oficiais do cliente. Nada foi inventado:
 
-- **Instagram**: [@escolapintando7maua](https://www.instagram.com/escolapintando7maua/) — bio, horário de funcionamento, legendas de posts reais (matrículas, oficina de artes, culinária pedagógica, campo de experiência corpo/gesto/movimento, Semana do Folclore, Redemoinho do Saci) e comentários públicos de seguidores usados na seção de depoimentos.
+- **Instagram**: [@escolapintando7maua](https://www.instagram.com/escolapintando7maua/) — bio, horário de funcionamento, legendas de posts reais (matrículas, oficina de artes, culinária pedagógica, campo de experiência corpo/gesto/movimento, Semana do Folclore, Redemoinho do Saci).
 - **Facebook**: [Escola e Berçário Pintando o Sete](https://www.facebook.com/escolapintando7maua/) — endereço completo, categoria (Pré-escola / Berçário e Educação Infantil), modalidades (Integral / Semi-integral / Meio período), telefone, e-mail.
+- **Google** (Perfil da Empresa): nota agregada (4,6/5, 19 avaliações) e os depoimentos usados na seção "Depoimentos" — [ver no Google Maps](https://www.google.com/maps/place/Recrea%C3%A7%C3%A3o+e+Pre+Escola+Pintando+o+Sete/data=!4m2!3m1!1s0x94ce6958891565dd:0x8e041762671de335).
 
-**Sobre a paleta e o logo**: as cores (azul, amarelo, coral) foram extraídas da identidade visual real do perfil (o logo é um respingo de tinta azul com um monograma "PS" e uma auréola de pontos coloridos). O `assets/logo.svg` é uma recriação original inspirada nesse logo — não é o arquivo hospedado no Instagram/Facebook, que pode mudar ou não estar disponível em alta resolução. Recomenda-se substituir por um arquivo vetorial oficial do cliente assim que disponível.
+**Sobre a paleta e o logo**: as cores e o layout do emblema (respingo de tinta azul, círculo em 4 quadrantes coloridos, monograma "PS", texto em arco "RECREAÇÃO E PRÉ ESCOLA" e a assinatura em script "Pintando o Sete") foram recriados em SVG a partir do logo real do perfil. Não é o arquivo hospedado no Instagram/Facebook — que pode mudar ou não estar disponível em alta resolução — mas uma reconstrução fiel em vetor, o que garante nitidez em qualquer tamanho de tela. Se o cliente tiver o arquivo vetorial original (.ai/.svg/.eps), vale substituir `assets/logo.svg`, `assets/favicon.svg` e o emblema inline do hero (`index.html`, seção `#inicio`) por ele.
 
 **Sobre as fotos**: a página usa ilustrações originais (blobs, ícones) no lugar de fotos reais das crianças. Fotos de crianças tiradas de posts públicos não foram baixadas nem republicadas aqui por uma questão de privacidade/consentimento dos responsáveis — quem deve decidir usar essas imagens no site é a escola, que já tem a relação de confiança com as famílias. Basta a escola enviar fotos próprias (com autorização de uso de imagem já coletada dos responsáveis) para substituir as ilustrações nas seções "Sobre" e "Dia a dia".
 
-**Avaliações**: a página do Facebook ainda não tem avaliações (0 avaliações). Por isso a seção de prova social usa comentários reais e públicos deixados por seguidores no Instagram, com o @ de cada pessoa, em vez de simular notas ou depoimentos que não existem.
+**Avaliações**: a seção de prova social usa os depoimentos reais do Perfil da Empresa no Google (nota 4,6/5, 19 avaliações) — priorizando os mais recentes e com nota máxima (5 estrelas), como pedido pelo cliente. O Google também tem algumas avaliações antigas de 1 estrela (contestadas publicamente pela escola nas respostas); elas não foram usadas na vitrine por não serem as "mais recentes e com maiores notas", mas continuam visíveis para qualquer visitante que clique em "Ver todas as avaliações no Google" — a página não esconde o link, só não copia as negativas para o próprio site.
 
 ## Dados de contato (para manutenção)
 
